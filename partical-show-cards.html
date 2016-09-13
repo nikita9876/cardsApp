@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" ng-repeat="card in cards">
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title pull-left">{{card.name}}</h3>
+
+                </div>
+                <div class="panel-body">
+                    <p>{{card.text}}</p>
+                </div>
+                <div class="panel-footer">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="caption">
+                    <form ng-submit="addCard()">
+                        <textarea class="form-control" ng-model="newText" rows="2"></textarea>
+                        <input class="btn btn-info btn-xs" type="submit" value="Add Card">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

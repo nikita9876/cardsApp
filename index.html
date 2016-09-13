@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="routerApp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Home Page</h1>
+        <a ui-sref="getStarted" class="btn btn-success">Get Started</a>
+        <a ui-sref="showCards" class="btn btn-info">Show Cards</a>
+    </div>
+    <div ui-view>
+
+    </div>
+</body>
+</html>
