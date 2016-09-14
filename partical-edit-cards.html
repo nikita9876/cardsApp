@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" ng-repeat="card in cards">
+            <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title pull-left">{{card.name}}</h3>
+                    <button class="btn btn-default pull-right" ng-click="editCard(card)" ng-if="!card.edition">
+                        <i class="fa fa-pencil"></i>
+                        Edit
+                    </button>
+                </div>
+                <div class="panel-body">
+                    <p ng-if="!card.edition">{{card.text}}</p>
+                    <form ng-submit="changeCard(card)">
+                        <input ng-if="card.edition" class="form-control" ng-model="card.editedCard">
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    <button ng-if="card.edition" class="btn btn-primary" ng-click="changeCard(card)">Save</button>
+                    <button ng-if="card.edition" class="btn btn-default" ng-click="changeCancel(card)">Cancel</button>
+                    <button ng-if="!card.edition" type="button" class="btn btn-danger" ng-click="removeCard(card)">Del</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="caption">
+                    <form ng-submit="addCard()">
+                        <textarea name="add" class="form-control" ng-model="newText" rows="2" required></textarea>
+                        <input class="btn btn-info" type="submit" value="Add Card" ng-disabled="add.$invalid">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
